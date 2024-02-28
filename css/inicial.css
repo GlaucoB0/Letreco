@@ -63,5 +63,19 @@ main{
   font-size: 1.8rem;
 }
 /*******************Novidades*****************/
-
+.novidades{
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+.novidades .imagem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imgArt{
+  height: 30vh;
+  width: 20vw;
+  border-radius: 10px;
+}
 /*******************Novidades*****************/
