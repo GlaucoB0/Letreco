@@ -1,7 +1,7 @@
 :root{
   --verde: #CCFF00;
   --preto-azulado:#00020B;
-  --preto-azuladinho:#0D0E13 ;
+  --preto-azuladinho:#0a0c11 ;
   --subletra: #575757;
   --pesquisar: #3C3C3C;
 }
@@ -65,8 +65,12 @@ main{
 /*******************Novidades*****************/
 .novidades{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 100px;
+  margin-bottom: 200px;
+}
+.container > .title{
+  margin-bottom: 20px ;
 }
 .novidades .imagem{
   display: flex;
@@ -78,4 +82,89 @@ main{
   width: 20vw;
   border-radius: 10px;
 }
-/*******************Novidades*****************/
+.nomeArt{
+  background-color: var(--verde);
+  color: var(--preto-azulado);
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 8px;
+  margin-top: -16px;
+  margin-bottom: 20px;
+}
+.hotMusic {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.Desc-mus{
+  color: var(--subletra);
+  font-weight: bold;
+}
+
+/***********RANKING**************/
+.maisAcessadas{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.music{
+  display: flex;
+  gap: 30px;
+}
+.music .numRank{
+  font-size: 4rem;
+  color: var(--subletra);
+}
+.info-musica{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.nomeMusRank{
+  color: var(--verde);
+  font-weight: bold;
+}
+.musArt{
+  display: flex;
+  align-items: center;
+  background-color: var(--preto-azuladinho);
+  justify-content: space-around;
+  height: 600px;
+}
+.rankArtistas{
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+.art{
+  display: flex;
+  align-items: center;
+  gap: 120px;
+}
+.art .imagemArt img{
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+}
+.art .imagemArt .numRankArt{
+  background-color: var(--verde);
+  color: var(--preto-azulado);
+  font-weight: 900;
+  padding: 15px 23px;
+  border-radius: 100% 100% 100% 0;
+  margin-left: -170px;
+  margin-top: -200px;
+  
+}
+.art .info-artista{
+  display: flex;
+  flex-direction: column;
+}
+.art .info-artista .nomeArtRank{
+  color: var(--verde);
+  font-weight: bold;
+}
+.art .info-artista .views{
+  color: var(--subletra);
+  font-weight: 500;
+}
