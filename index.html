@@ -4,28 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Letreco</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
   <header>
-    <span class="logo">Letreco</span>
+    <nav class="navbar">
+      <span class="logo">Letreco</span>
+    </nav>
+
   </header>
 
   <main>
-    <section>
-      <div>
-        <span>Entrar no letreco</span>
-        <div>
-          <img src="" alt="">
-          <input type="text" placeholder="Password">
+    <section class="login">
+      <div class="container">
+        <div class="info">
+          <h1 class="titulo">Entrar no Letreco</h1>
+          
+          <div class="linha"></div>
+          <div class="input user">
+            <img src="./img/userIcon.svg" alt="" class="icon">
+            <input type="text" id="user" class="infos" placeholder="Username">
+          </div>
+          <div class="input senha">
+            <img src="./img/locker.svg" alt="" class="icon">
+            <input type="text" id="senha" class="infos" placeholder="Password">
+          </div>
+
+          <button class="btn">Entrar</button> 
         </div>
-        <div>
-          <img src="" alt="">
-          <input type="text" placeholder="Username">
-        </div>
-        <button>Entrar</button>
+
         
     </section>
   </main>
+
+  <script src="./js/login.js"></script>
 </body>
 </html>

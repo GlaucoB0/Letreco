@@ -4,4 +4,105 @@
   --preto-azuladinho:#0D0E13 ;
   --subletra: #575757;
   --pesquisar: #3C3C3C;
-} 
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  font-family: 'Montserrat';
+  color: white;
+}
+body{
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgb(2, 0, 10) 0%, rgb(55, 55, 55) 100%);
+  background-repeat: no-repeat;
+  height: 110vh;
+}
+
+
+/*******************NavBar*****************/
+header{
+  height: 10vh;
+  background-color: var(--preto-azuladinho);
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 10%;
+}
+.logo{
+  font-family: 'Inika';
+  font-weight: bold;
+  font-size: 2.2rem;
+}
+
+
+
+/***********LOGIN**************/
+main{
+  display: flex;
+  justify-content: center;
+}
+.login{
+  margin-top: 60px;
+  
+}
+.container{
+  height: 820px;
+  width: 800px;
+  background-color: var(--preto-azulado);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.btn{
+  border-radius: 50px;
+  height: 80px;
+  background-color: var(--verde);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: #b7e401;
+}
+.titulo{
+  font-size: 2.7rem;
+}
+.infos{
+  background: none;
+  color: #9F9F9F;
+  height: 40px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #1D223E;
+  font-size: 1.4rem;
+  padding-left: 40px;
+  position: absolute;
+  width: 430px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+.input{
+  display: flex;
+}
+.senha{
+  margin-top: 30px;
+}
+.linha{
+  width: 100%;
+  height: 3px;
+  background-color: #282e52;
+}

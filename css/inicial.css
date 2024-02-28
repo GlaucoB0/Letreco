@@ -1,0 +1,67 @@
+:root{
+  --verde: #CCFF00;
+  --preto-azulado:#00020B;
+  --preto-azuladinho:#0D0E13 ;
+  --subletra: #575757;
+  --pesquisar: #3C3C3C;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  font-family: 'Montserrat';
+  color: white;
+}
+body{
+  background-color: var(--preto-azulado);
+}
+
+
+/*******************NavBar*****************/
+header{
+  height: 9vh;
+  background-color: var(--preto-azuladinho);
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 10%;
+}
+.logo{
+  font-family: 'Inika';
+  font-weight: bold;
+  font-size: 2.2rem;
+  color:var(--verde);
+}
+.pesquisar{
+  background-color: var(--pesquisar);
+  border-radius: 12px;
+  height: 40px;
+  width: 600px;
+  border: none;
+  padding-left: 10px;
+  color: #B7B7B7;
+}
+/*******************NavBar*****************/
+
+/*Main*/
+main{
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.container{
+  border:1px solid blueviolet;
+  width: 80%;
+  margin-top: 105px;
+}
+.title{
+  font-size: 1.8rem;
+}
+/*******************Novidades*****************/
+
+/*******************Novidades*****************/
