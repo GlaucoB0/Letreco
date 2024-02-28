@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: 'Montserrat';
   color: white;
 }
@@ -33,14 +33,14 @@ nav{
 .logo{
   font-family: 'Inika';
   font-weight: bold;
-  font-size: 2.2rem;
+  font-size: 2rem;
   color:var(--verde);
 }
 .pesquisar{
   background-color: var(--pesquisar);
   border-radius: 12px;
-  height: 40px;
-  width: 600px;
+  height: 30px;
+  width: 500px;
   border: none;
   padding-left: 10px;
   color: #B7B7B7;
@@ -55,7 +55,6 @@ main{
   justify-content: center;
 }
 .container{
-  border:1px solid blueviolet;
   width: 80%;
   margin-top: 105px;
 }
@@ -98,7 +97,6 @@ main{
 }
 .Desc-mus{
   color: var(--subletra);
-  font-weight: bold;
 }
 
 /***********RANKING**************/
@@ -130,6 +128,10 @@ main{
   background-color: var(--preto-azuladinho);
   justify-content: space-around;
   height: 600px;
+  width: 120%;
+  margin-left: -8vw;
+
+
 }
 .rankArtistas{
   display: flex;
