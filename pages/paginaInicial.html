@@ -22,7 +22,7 @@
 
 <body>
   <header>
-    <nav>
+    <nav id="nav">
       <span class="logo">Letreco</span>
       <input class="pesquisar" type="text" placeholder="O que você quer ouvir agora?">
       <span class="user"></span>
@@ -31,13 +31,13 @@
 
   <main>
     <div class="container">
-      <h1 class="title">Novidades</h1>
+      <h1 class="title" id="Novidades">Novidades</h1>
       <section class="novidades">
 
       </section>
       <section>
         <h1 class="title">Mais acessadas</h1>
-        <div class="musArt">
+        <div class="musArt" id="rank">
 
           <section class="maisAcessadas">
 
@@ -54,6 +54,46 @@
     </div>
 
   </main>
+
+  <footer>
+    
+    <section>
+      <ul class="navegacao">
+        <li><label for="musicas">Musicas</label><a href="#rank">Top musicas</a></li>
+        <li><label for="artistas">Artistas</label><a href="#rank">Top artistas</a></li>
+        <li><label for="Novidades">Novidades</label><a href="#nav">HotSpots</a></li>
+      </ul>
+      <div class="listra"></div>
+      <div class="contato">
+        <label for="contato">Contato:</label>
+        <ul>
+          <li><a id="github" href="https://github.com/GlaucoB0"><img src="../img/github.svg" alt=""></a></li>
+          <li><a id="discord" href="https://discord.gg/22txPfjvCX"><img src="../img/discord.svg" alt=""></a></li>
+          <li><a id="instagram" href="https://discord.gg/22txPfjvCX"><img src="../img/instagram.svg" alt=""></a></li>
+        </ul>
+      </div>
+      <div class="listra"></div>
+      <div class="infoapp">
+        <div class="recursos">
+          <label for="API">Recursos Utilizados da API:</label>
+          <a href="https://api.vagalume.com.br/"><img src="../img/vagalume.png" alt=""></a>
+        </div>
+        <div class="criador">
+          <label for="">Feito por:</label>
+          <p>Glauco Manoel Borges Soares</p>
+          <p>glauco.m.b.soares@gmail.com</p>
+        </div>
+        <div class="vagalume">
+          <label for="">Acesse a Vagalume</label>
+          <a href="https:/vagalume.com.br"><img src="../img/vagalume.png" alt=""></a>
+        </div>
+      </div>
+      <div class="listra"></div>
+      
+    </section>
+    <p class="direitos">&copy; 2024 - Todos os direitos reservados</p>
+  </footer>
+
   <script src="../js/inicial.js" type="module"></script>
 </body>
 

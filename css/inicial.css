@@ -5,6 +5,10 @@
   --subletra: #575757;
   --pesquisar: #3C3C3C;
 }
+::selection{
+  background-color: var(--verde);
+  color: var(--preto-azulado);
+}
 *{
   margin: 0;
   padding: 0;
@@ -45,6 +49,9 @@ nav{
   padding-left: 10px;
   color: #B7B7B7;
 }
+header nav .user:hover{
+  color: var(--verde);
+}
 /*******************NavBar*****************/
 
 /*Main*/
@@ -75,6 +82,10 @@ main{
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+}
+.novidades .hotSpots .hotMusic .imagem .Desc-mus:hover{
+  color: var(--verde);
 }
 .imgArt{
   height: 30vh;
@@ -113,10 +124,14 @@ main{
   font-size: 4rem;
   color: var(--subletra);
 }
+.music .numRank:hover{
+  color: var(--verde);
+}
 .info-musica{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 }
 .nomeMusRank{
   color: var(--verde);
@@ -169,4 +184,80 @@ main{
 .art .info-artista .views{
   color: var(--subletra);
   font-weight: 500;
+}
+
+/**********Footer***************/
+footer {
+	background-color: var(--preto-azulado);
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	margin-top: 50px;
+  border: 4px solid var(--verde);
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+}
+footer section{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 10%;
+}
+
+section .navegacao{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin-top: 50px;
+}
+section .navegacao li{
+  display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+}
+section .navegacao li a{
+  text-decoration: none;
+}
+section .navegacao li a:hover{
+  color: var(--verde);
+}
+section .navegacao li label{
+  font-weight: bold;
+  color: var(--subletra);
+}
+section .listra{
+  background-color: var(--subletra);
+  height: 1px;
+  width: 100%;
+}
+footer section .contato{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer section label{
+  color: var(--subletra);
+  font-weight: bold;
+}
+footer section .contato ul{
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+footer label{
+  margin-bottom: 13px;
+}
+footer section .infoapp{
+  display: flex;
+  justify-content: space-between;
+}
+footer section .infoapp div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer .direitos{
+  margin-top: 68px;
 }
