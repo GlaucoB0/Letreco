@@ -170,7 +170,7 @@ main{
   width: 150px;
   height: 150px;
 }
-.art .imagemArt .numRankArt{
+.numRankArt{
   background-color: var(--verde);
   color: var(--preto-azulado);
   font-weight: 900;
@@ -192,7 +192,65 @@ main{
   color: var(--subletra);
   font-weight: 500;
 }
+@media (max-width: 860px) {
+  *{
+    font-size: .8rem;
+  }
+  /*novidades*/
+  .imgArt{
+    height: 180px;
+    width: 200px;
+    border-radius: 10px;
+  }
+  .novidades{
+    gap: 10px;
+    margin-bottom: 200px;
+  }
+  /*Rank*/
+  .art .imagemArt img{
+    width: 100px;
+    height: 100px;
+  }
+  .numRankArt{
+    font-weight: 900;
+    padding: 8px 13px;
+    border-radius: 100% 100% 100% 0;
+    margin-left: -1px;
+    
+  }
+  .art .info-artista{
+    margin-left: -110px;
+  }
+}
+@media (max-width: 656px){
+  *{
+    font-size: 0.7rem;
+  }
+  .imgArt{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+  }
+  .novidades{
+    gap: 10px;
+    margin-bottom: 200px;
+  }
+  /*Rank*/
+  .art .imagemArt img{
+    width: 70px;
+    height: 70px;
+  }
+  .numRankArt{
+    font-weight: 900;
+    padding: 4px 8px;
+    margin-left: -1px;
+    
+  }
+  .art .info-artista{
+    margin-left: -110px;
+  }
 
+}
 /**********Footer***************/
 footer {
 	background-color: var(--preto-azulado);

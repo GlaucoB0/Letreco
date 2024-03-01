@@ -149,8 +149,10 @@ function showRankArt(art){
     artSec.innerHTML =`
     <a href="./music.html?index=${acharUser(paramIndex)}&id=${artista.id}" class="art" id="${artista.id}">
       <div class="imagemArt">
-        <img src="${artista.pic_medium}"></img> 
-        <span class="numRankArt">${index+1}°</span>     
+        <img src="${artista.pic_medium}">
+         
+        </img> 
+         <span class="numRankArt">${index+1}°</span>   
       </div>
       <div class="info-artista">
         <span class="nomeArtRank">${artista.name}</span>
