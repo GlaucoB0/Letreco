@@ -114,7 +114,7 @@ main{
   text-align: center;
 }
 .Desc-mus{
-  color: var(--subletra);
+  color: #9f9f9f;
 }
 
 /***********RANKING**************/
@@ -196,11 +196,18 @@ main{
   *{
     font-size: .8rem;
   }
+  main .container section .musArt{
+    margin: 0 10;
+    height: 500px;
+  }
   /*novidades*/
   .imgArt{
     height: 180px;
     width: 200px;
     border-radius: 10px;
+  }
+  .music{
+    gap: 10px;
   }
   .novidades{
     gap: 10px;
@@ -231,6 +238,16 @@ main{
   *{
     font-size: 0.7rem;
   }
+  .music .numRank{
+    font-size: 2rem;
+  }
+  main .container section .musArt{
+    margin: 0 10;
+    height: 280px;
+  }
+  .music{
+    gap: 10px;
+  }
   .imgArt{
     height: 100px;
     width: 100px;
@@ -242,8 +259,8 @@ main{
   }
   /*Rank*/
   .art .imagemArt img{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
   }
   .numRankArt{
     font-weight: 900;
@@ -271,7 +288,23 @@ header nav{
 header #nav div img{
   display: none;
 }
+.art .imagemArt img{
+  width: 50px;
+  height: 50px;
+}
 
+}
+@media (max-width: 516px){
+  header #nav div img{
+    display: none;
+  }
+}
+@media (max-width: 312px){
+  .imgArt{
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+  }
 }
 /**********Footer***************/
 footer {
