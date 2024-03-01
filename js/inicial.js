@@ -4,17 +4,16 @@ const baseUrl = 'https://api.vagalume.com.br'
 
 const user = document.querySelector('.user')
 
-document.addEventListener('DOMContentLoaded', ()=>{
-  const urlParam = new URLSearchParams(window.location.search)
-  const paramIndex = urlParam.get('index')
-  acharUser(paramIndex)//colocar o nome do usuario na navbar
-})
+
+const urlParam = new URLSearchParams(window.location.search)
+const paramIndex = urlParam.get('index')
+acharUser(paramIndex)//colocar o nome do usuario na navbar
+
 
 
 
 const loadNovidades = async () => {
-  const res = await fetch(`${baseUrl}/hotspots.php?apikey=${key}
-  `);
+  const res = await fetch(`${baseUrl}/hotspots.php?apikey=${key}`);
   const data = await res.json()
   const limitdata = data.hotspots.slice(0, 3)
   return limitdata
@@ -57,14 +56,23 @@ loadAllWithPromiseAll()
 /**Funções */
 function acharUser(index){
   data.forEach((usuario)=>{
-
     if(index == usuario.id){
       user.innerHTML = "Bem vindo "+ usuario.usuario + "!"
     }
   })
 }
+function puxarUser(index){
+  let user = ""
+  data.forEach((usuario)=>{
+    
+    if(index == usuario.id){
+      user = `${usuario.id}`
+    }
+  })
+  return `${user}`
+}
 
-
+//Formatar a data atual para o ranking
 function formatDate(date, format) {
     const map = {
         mm: date.getMonth() + 1,
@@ -89,15 +97,14 @@ function showHotSpots(spots){
     novidades.appendChild(spotsSecc)
     spotsSecc.innerHTML = 
   `
-  <div class="hotMusic" id=${spot.id}>
+  <a href="./music.html?index=${puxarUser(paramIndex)}&id=${spot.id}" class="hotMusic" id=${spot.id}>
     <div class="imagem">
       <img src="${spot.art_pic_src}" alt="foto do artista" class="imgArt">
       <span class="nomeArt">${(spot.title).toUpperCase()}</span>
       <span class="Desc-mus">${spot.descr}</span>
     </div> 
-  </div>
+  </a>
   `
-  console.log(spot)
   })  
 }
 
@@ -114,12 +121,13 @@ function showRankMus(date){
     `
     <div class="music">
       <span class="numRank">${index+1}</span>
-      <div class="info-musica">
+      <a href="./music.html?index=${puxarUser(paramIndex)}&id=${rank.id}" class="info-musica">
         <span class="nomeMusRank">${rank.name}</span>
         <span class="nomeArtRank">${rank.art.name}</span>            
       </div>
-    </div>
+    </a>
     `
+
   })
 }
 
@@ -139,7 +147,7 @@ function showRankArt(art){
     rankArtpai.appendChild(artSec)
 
     artSec.innerHTML =`
-    <div class="art" id="${artista.id}">
+    <a href="./music.html?index=${acharUser(paramIndex)}&id=${artista.id}" class="art" id="${artista.id}">
       <div class="imagemArt">
         <img src="${artista.pic_medium}"></img> 
         <span class="numRankArt">${index+1}°</span>     
@@ -149,7 +157,7 @@ function showRankArt(art){
         <span class="views">${artista.views} views</span>
       </div>
 
-    </div>
+    </a>
     `
   })
 }

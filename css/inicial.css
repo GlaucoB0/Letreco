@@ -9,6 +9,9 @@
   background-color: var(--verde);
   color: var(--preto-azulado);
 }
+a{
+  text-decoration: none;
+}
 *{
   margin: 0;
   padding: 0;
@@ -48,6 +51,10 @@ nav{
   border: none;
   padding-left: 10px;
   color: #B7B7B7;
+}
+nav div img{
+  margin-left: -30px;
+  margin-bottom: -5px;
 }
 header nav .user:hover{
   color: var(--verde);
@@ -124,12 +131,14 @@ main{
   font-size: 4rem;
   color: var(--subletra);
 }
+
 .music .numRank:hover{
   color: var(--verde);
 }
 .info-musica{
   display: flex;
   flex-direction: column;
+ 
   justify-content: center;
   cursor: pointer;
 }
@@ -145,8 +154,6 @@ main{
   height: 600px;
   width: 120%;
   margin-left: -8vw;
-
-
 }
 .rankArtistas{
   display: flex;
@@ -260,4 +267,41 @@ footer section .infoapp div{
 }
 footer .direitos{
   margin-top: 68px;
+}
+
+/***************PAGINA DE MUSICA***************/
+main .music-container{
+  margin: 10px 10%;
+  width: 100%;
+  /* border: 1px white solid; */
+  display: flex;
+  justify-content: space-between;
+}
+main .music-container .letra{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .music-container .infoMusica{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main .music-container .infoMusica img{
+  border-radius: 100%;
+  height: 50px;
+}
+main .music-container .infoMusica .nome{
+  display: flex;
+  flex-direction: column;
+  color: var(--verde);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+main .music-container .infoMusica .nomeArtista{
+  color: var(--subletra);
+  font-weight: bold;
+}
+main .music-container .letraMusica{
+  margin-left: 60px;
 }
