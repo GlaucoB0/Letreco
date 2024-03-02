@@ -119,13 +119,13 @@ function showRankMus(date){
     rankPai.appendChild(rankSecc)
     rankSecc.innerHTML = 
     `
-    <div class="music">
+    <a href="./music.html?index=${puxarUser(paramIndex)}&id=${rank.id}" class="music">
       <span class="numRank">${index+1}</span>
       <div class="info-musica">
-        <a href="./music.html?index=${puxarUser(paramIndex)}&id=${rank.id}" class="nomeMusRank">${rank.name}</a>
-        <a href="./artista.html?index=${puxarUser(paramIndex)}&id=${rank.art.id}" class="nomeArtRank" >${rank.art.name}</</a>  
+        <div class="nomeMusRank">${rank.name}</div>
+        <div class="nomeArtRank" >${rank.art.name}</div>  
       </div>     
-      </div>
+    </a>
     `
 
   })
@@ -147,7 +147,7 @@ function showRankArt(art){
     rankArtpai.appendChild(artSec)
 
     artSec.innerHTML =`
-    <a href="./artista.html?index=${puxarUser(paramIndex)}&id=${artista.id}" class="art" id="${artista.id}">
+    <a href="./artista.html?index=${puxarUser(paramIndex)}&name=${tratarART(artista.url)}" class="art" id="${artista.id}">
       <div class="imagemArt">
         <img src="${artista.pic_medium}">
          
@@ -162,4 +162,9 @@ function showRankArt(art){
     </a>
     `
   })
+}
+function tratarART(artista){
+  let nomeArt = artista
+  nomeArt = nomeArt.replace("https://www.vagalume.com.br","")
+  return `${nomeArt}`
 }

@@ -19,6 +19,7 @@ a{
   font-size: 1rem;
   font-family: 'Montserrat';
   color: white;
+  transition: 0.1s;
 }
 body{
   background-color: var(--preto-azulado);
@@ -131,7 +132,10 @@ main{
   font-size: 4rem;
   color: var(--subletra);
 }
-
+.maisAcessadas .rankMus .music:hover{
+  border-radius: 8px;
+  background-color: #313131;
+} 
 .music .numRank:hover{
   color: var(--verde);
 }
@@ -146,18 +150,11 @@ main{
   color: var(--verde);
   font-weight: bold;
 }
-.nomeMusRank:hover{
-  border-bottom: 1px solid white;
-}
 main .musica-Container{
   display: flex;
   flex-direction: column;
   justify-content: left;
   align-items: start;
-}
-.nomeArtRank:hover{
-  border-bottom: 1px solid white;
-  width: 100%;
 }
 .musArt{
   display: flex;
@@ -441,4 +438,108 @@ main .music-container .infoMusica .nomeArtista{
 }
 main .music-container .letraMusica{
   margin-left: 60px;
+}
+.nomeMusica a:hover{
+  background-color: var(--verde);
+  color:var(--preto-azulado);
+  border-radius: 8px;
+  padding: 0 3px;
+}
+main .container{
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+}
+
+/**********PAGINA DE ARTISTA************/
+main .imagem-Principal #hero{
+    width: 100vw; /* width of container */
+    height: 337px; /* height of container */
+    object-fit: cover;
+    border: 5px solid black;
+    filter: brightness(0.55) opacity(0.75);
+}
+main .imagem-Principal{
+  margin-bottom: 50px;
+}
+main .conter-pagina .conter{
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  margin: 0 10%;
+}
+main .imagem-Principal .nomeRank{
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+main .imagem-Principal .nomeRank h1{
+  font-size: 3rem;
+  color: var(--verde);
+}
+main .imagem-Principal span{
+  font-weight: bold;
+}
+main .imagem-Principal .infos-artista{
+  margin-top: -110px;
+  margin-left: 10%;
+  margin-bottom: 50px;
+  position: relative;
+}
+.titulos{
+  color: var(--verde);
+  font-size: 1.8rem;
+  margin-bottom: 38px;
+}
+main .mais-tocadas .top-musicas .Musics{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+main .mais-tocadas .top-musicas .Musics .musica{
+  margin-bottom: 8px;
+}
+.fonte{
+  color: var(--verde);
+  border-bottom: 1px solid;
+}
+main .mais-tocadas .top-musicas .Musics a{
+  display: flex;
+  gap: 10px;
+}
+/* main .mais-tocadas .top-musicas .Musics a span:hover{
+  border-radius: 8px;
+  color: var(--verde);
+  background-color: #313131;
+} */
+main .conter-pagina .conter .conter-musicas .allMusics{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+main .conter-pagina .conter .conter-musicas .allMusics div a{
+  display: flex;
+  gap: 10px;
+}
+div .a:hover{
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--preto-azulado);
+  background-color: var(--verde);
+}
+div .a span:hover{
+  color: var(--preto-azulado);
+}
+.randomMusic{
+  cursor: pointer;
+  height: 50px;
+  width: 100px;
+  border-radius: 8px;
+  border: 1px solid var(--subletra);
+  background:none;
+  color: var(--subletra);
+  font-weight: bold;
+}
+.randomMusic:hover{
+  color: var(--verde);
+  border-color: var(--verde);
 }

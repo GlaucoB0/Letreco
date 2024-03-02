@@ -41,7 +41,6 @@ fetch(`https://api.vagalume.com.br/search.php?apikey=${key}&musid=${musicId}`)
 })
 
 async function loadArtista(music) {
-  console.log(music.art.url+"index.js")
   const res = await fetch(music.art.url+"index.js");
   const data = await res.json()
   
@@ -52,20 +51,18 @@ function showMusic(data,music){
   const letra = document.querySelector(".letra")
   const title = document.querySelector("#title-mus")
   title.innerHTML = `${music.mus[0].name} - Letreco`
-  console.log(data)
-  console.log(music)
   letra.innerHTML=
   `
   <div class="infoMusica">
     <img src="${baseUrl}${data.artist.pic_small}"></img>
     <div class="nomeMusica">
       <span class="nome">${music.mus[0].name}</span>
-      <span class="nomeArtista">${music.art.name}</span>
+      <a href="./artista.html?index=${puxarUser(userId)}&name=${data.artist.url}" class="nomeArtista">${music.art.name}</a>
     </div>
-  </div>
-
+  </div>  
   <div class="letraMusica">
     <p>${tratarLetra(music.mus[0].text)}</p>
+    <a class="fonte" href="${music.mus[0].url}"><br>(letra retirada de: ${music.mus[0].url})</a>
   </div>
   `
 }
@@ -122,14 +119,15 @@ function showRankMus(date){
     const rankPai = document.querySelector(".maisAcessadas")
     rankPai.appendChild(rankSecc)
     rankSecc.innerHTML = 
+
     `
-    <div class="music">
+    <a href="./music.html?index=${puxarUser(userId)}&id=${rank.id}" class="music">
       <span class="numRank">${index+1}</span>
       <div class="info-musica">
-        <a href="./music.html?index=${puxarUser(userId)}&id=${rank.id}" class="nomeMusRank">${rank.name}</a>
-        <a href="./artista.html?index=${puxarUser(userId)}&id=${rank.art.id}" class="nomeArtRank" >${rank.art.name}</</a>  
+        <div class="nomeMusRank">${rank.name}</div>
+        <div class="nomeArtRank" >${rank.art.name}</div>  
       </div>     
-      </div>
+    </a>
     `
 
   })
@@ -137,7 +135,7 @@ function showRankMus(date){
 function showRankArt(art){
   
   const rankArtista = art.art.day.all
-  console.log(rankArtista)
+
 
   
 
@@ -146,9 +144,9 @@ function showRankArt(art){
     artSec.classList.add("rankArt")
     const rankArtpai = document.querySelector(".rankArtistas")
     rankArtpai.appendChild(artSec)
-
+    console.log(artista)
     artSec.innerHTML =`
-    <a href="./artista.html?index=${puxarUser(userId)}&id=${artista.id}" class="art" id="${artista.id}">
+    <a href="./artista.html?index=${puxarUser(userId)}&name=${tratarART(artista.url)}" class="art" id="${artista.id}">
       <div class="imagemArt">
         <img src="${artista.pic_medium}">
          
@@ -163,4 +161,9 @@ function showRankArt(art){
     </a>
     `
   })
+}
+function tratarART(artista){
+  let nomeArt = artista
+  nomeArt = nomeArt.replace("https://www.vagalume.com.br","")
+  return `${nomeArt}`
 }
