@@ -121,11 +121,11 @@ function showRankMus(date){
     `
     <div class="music">
       <span class="numRank">${index+1}</span>
-      <a href="./music.html?index=${puxarUser(paramIndex)}&id=${rank.id}" class="info-musica">
-        <span class="nomeMusRank">${rank.name}</span>
-        <span class="nomeArtRank">${rank.art.name}</span>            
+      <div class="info-musica">
+        <a href="./music.html?index=${puxarUser(paramIndex)}&id=${rank.id}" class="nomeMusRank">${rank.name}</a>
+        <a href="./artista.html?index=${puxarUser(paramIndex)}&id=${rank.art.id}" class="nomeArtRank" >${rank.art.name}</</a>  
+      </div>     
       </div>
-    </a>
     `
 
   })
@@ -147,7 +147,7 @@ function showRankArt(art){
     rankArtpai.appendChild(artSec)
 
     artSec.innerHTML =`
-    <a href="./music.html?index=${acharUser(paramIndex)}&id=${artista.id}" class="art" id="${artista.id}">
+    <a href="./artista.html?index=${puxarUser(paramIndex)}&id=${artista.id}" class="art" id="${artista.id}">
       <div class="imagemArt">
         <img src="${artista.pic_medium}">
          

@@ -146,6 +146,19 @@ main{
   color: var(--verde);
   font-weight: bold;
 }
+.nomeMusRank:hover{
+  border-bottom: 1px solid white;
+}
+main .musica-Container{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: start;
+}
+.nomeArtRank:hover{
+  border-bottom: 1px solid white;
+  width: 100%;
+}
 .musArt{
   display: flex;
   align-items: center;
@@ -200,6 +213,10 @@ main{
     margin: 0 10;
     height: 500px;
   }
+  main .musica-Container section .musArt{
+    margin: 0 10;
+    height: 500px;
+  }
   /*novidades*/
   .imgArt{
     height: 180px;
@@ -242,6 +259,10 @@ main{
     font-size: 2rem;
   }
   main .container section .musArt{
+    margin: 0 10;
+    height: 280px;
+  }
+  main .musica-Container section .musArt{
     margin: 0 10;
     height: 280px;
   }
