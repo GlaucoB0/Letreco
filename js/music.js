@@ -12,6 +12,7 @@ acharUser(userId)//colocar o nome do usuario na navbar
 // https://api.vagalume.com.br/search.php?apikey=${key}&musid=${id}
 // https://www.vagalume.com.br/${nomeArtista}/index.js
 
+let i = 0
 const btnpesquisa = document.querySelector("#pesquisar")
 btnpesquisa.addEventListener('click',()=>{
   let valorPesquisa = document.querySelector(".pesquisar").value
@@ -24,13 +25,17 @@ btnpesquisa.addEventListener('click',()=>{
     console.log(data)
   })
 })
-
+const barra = document.querySelector("#menu")
 function carregarPesquisa(data){
+  if(i!=0){
+    barra.innerHTML = ""
+  }
+  i++
   const menu = document.createElement("div")
   menu.classList.add("barra")
   data.response.docs.map((results)=>{
 
-  const barra = document.querySelector("#menu")
+  
     barra.appendChild(menu)
     const nome = document.createElement("div")
     menu.appendChild(nome)
@@ -46,12 +51,19 @@ function carregarPesquisa(data){
       <a href="./music.html?index=${puxarUser(userId)}&id=${results.id}"> ${results.title} - <span class="banda">${results.band}</span></a>
       `
     }
-
+      const main = document.querySelector("main")
+      main.addEventListener("click",()=>{
+        barra.innerHTML = " "
+        menu.innerHTML = " "
+      })
     })
 
  
 }
-
+const logo = document.querySelector("#logo")
+logo.addEventListener('click',()=>{
+  window.location.href = `./paginaInicial.html?index=${userId}`
+})
 //funções
 function acharUser(index){
   data.forEach((usuario)=>{

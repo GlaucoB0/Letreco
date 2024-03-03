@@ -10,6 +10,8 @@ const paramIndex = urlParam.get('index')
 acharUser(paramIndex)//colocar o nome do usuario na navbar
 
 
+
+let i = 0
 const btnpesquisa = document.querySelector("#pesquisar")
 btnpesquisa.addEventListener('click',()=>{
   let valorPesquisa = document.querySelector(".pesquisar").value
@@ -22,13 +24,17 @@ btnpesquisa.addEventListener('click',()=>{
     console.log(data)
   })
 })
-
+const barra = document.querySelector("#menu")
 function carregarPesquisa(data){
+  if(i!=0){
+    barra.innerHTML = ""
+  }
+  i++
   const menu = document.createElement("div")
   menu.classList.add("barra")
   data.response.docs.map((results)=>{
 
-  const barra = document.querySelector("#menu")
+  
     barra.appendChild(menu)
     const nome = document.createElement("div")
     menu.appendChild(nome)
@@ -44,12 +50,19 @@ function carregarPesquisa(data){
       <a href="./music.html?index=${puxarUser(paramIndex)}&id=${results.id}"> ${results.title} - <span class="banda">${results.band}</span></a>
       `
     }
-
+      const main = document.querySelector(".container")
+      main.addEventListener("click",()=>{
+        barra.innerHTML = " "
+        menu.innerHTML = " "
+      })
     })
 
  
 }
-
+const logo = document.querySelector("#logo")
+logo.addEventListener('click',()=>{
+  window.location.href = `./paginaInicial.html?index=${paramIndex}`
+})
 const loadNovidades = async () => {
   const res = await fetch(`${baseUrl}/hotspots.php?apikey=${key}`);
   const data = await res.json()

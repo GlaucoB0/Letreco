@@ -51,6 +51,9 @@ nav{
   font-size: 2rem;
   color:var(--verde);
 }
+#logo{
+  cursor: pointer;
+}
 #pesquisar{
   cursor: pointer;
   background: none;
@@ -102,18 +105,26 @@ main{
   width: 80%;
   margin-top: 9vw;
 }
+#container{
+  margin-top: 30px;
+}
 .title{
   font-size: 1.8rem;
 }
 /*******************Novidades*****************/
+
 .novidades{
   display: flex;
   justify-content: space-around;
   gap: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 70px;
+  margin-top: -140px;
 }
 .container > .title{
   margin-bottom: 20px ;
+}
+main .container .ranksecc{
+  margin-top: -120px;
 }
 .novidades .imagem{
   display: flex;
@@ -235,6 +246,9 @@ main .musica-Container{
   *{
     font-size: .8rem;
   }
+  main .container .ranksecc{
+    margin-top: -220px;
+  }
   main .container section .musArt{
     margin: 0 10;
     height: 500px;
@@ -280,6 +294,9 @@ main .musica-Container{
 @media (max-width: 656px){
   *{
     font-size: 0.7rem;
+  }
+  main .container .ranksecc{
+    margin-top: -240px;
   }
   .music .numRank{
     font-size: 2rem;
