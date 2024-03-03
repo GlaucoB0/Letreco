@@ -11,7 +11,7 @@ const urlParam = new URLSearchParams(window.location.search)
 const paramIndex = urlParam.get('index')
 const urlArtista = urlParam.get('name')
 
-fetch(`https:/www.vagalume.com.br${urlArtista}index.js`)
+fetch(`${baseUrl}${urlArtista}index.js`)
 .then((res)=>res.json())
 .then((dataArt)=>{
   //console.log(dataArt)
