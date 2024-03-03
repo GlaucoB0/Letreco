@@ -4,8 +4,50 @@ const baseUrl = "https://api.vagalume.com.br"
 
 const user = document.querySelector(".user")
 const urlParam = new URLSearchParams(window.location.search)
-const userId = urlParam.get('index')
+let userId = urlParam.get('index')
 const musicId = urlParam.get('id')
+userId = descript(userId)
+
+
+let idCripto = encriptar(userId)
+
+function encriptar(id){
+  var encriptarID1 = 
+  id.replace(/0/g,"lUy").replace(/1/g,"Bolp").replace(/2/g,"chArt").replace(/3/g,"mInt").replace(/4/g,"Ped").replace(/5/g,"lont").replace(/6/g,"minh").replace(/7/g,"lkj").replace(/8/g,"zdr").replace(/9/g,"paraM")
+  
+  var encriptarID2 =
+  encriptarID1.replace(/U/g,"JJkm1").replace(/a/g,"1Hf").replace(/o/g,"0Klm").replace(/e/g,"H4g").replace(/m/g,"0Kk")
+
+  return `${encriptarID2}`
+
+}
+function descript(cripto){
+
+  var encriptarID2 =
+  cripto.replace(/0Kk/g,"m").replace(/H4g/g,"e").replace(/0Klm/g,"o").replace(/1Hf/g,"a").replace(/JJkm1/g,"U");
+
+  var original = 
+  encriptarID2.replace(/paraM/g,"9").replace(/zdr/g,"8").replace(/lkj/g,"7").replace(/minh/g,"6").replace(/lont/g,"5").replace(/Ped/g,"4").replace(/mInt/g,"3").replace(/chArt/g,"2").replace(/Bolp/g,"1").replace(/lUy/g,"0")
+  
+  return `${original}`
+}
+function acharUser(index){
+  data.forEach((usuario)=>{
+    if(index == usuario.id){
+      user.innerHTML = "Bem vindo "+ usuario.usuario + "!"
+    }
+  })
+}
+function puxarUser(index){
+  let user = ""
+  data.forEach((usuario)=>{
+    
+    if(index == usuario.id){
+      user = `${usuario.id}`
+    }
+  })
+  return `${encriptar(user)}`
+}
 
 acharUser(userId)//colocar o nome do usuario na navbar
 
@@ -65,26 +107,9 @@ function carregarPesquisa(data){
 
 const logo = document.querySelector("#logo")
 logo.addEventListener('click',()=>{
-  window.location.href = `./paginaInicial.html?index=${userId}`
+  window.location.href = `./paginaInicial.html?index=${encriptar(userId)}`
 })
 //funções
-function acharUser(index){
-  data.forEach((usuario)=>{
-    if(index == usuario.id){
-      user.innerHTML = "Bem vindo "+ usuario.usuario + "!"
-    }
-  })
-}
-function puxarUser(index){
-  let user = ""
-  data.forEach((usuario)=>{
-    
-    if(index == usuario.id){
-      user = `${usuario.id}`
-    }
-  })
-  return `${user}`
-}
 
 fetch(`https://api.vagalume.com.br/search.php?apikey=${key}&musid=${musicId}`)
 .then((res)=>res.json())

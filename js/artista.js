@@ -8,8 +8,35 @@ const user = document.querySelector('.user')
 
 
 const urlParam = new URLSearchParams(window.location.search)
-const paramIndex = urlParam.get('index')
+let paramIndex = urlParam.get('index')
 const urlArtista = urlParam.get('name')
+
+paramIndex = descript(paramIndex)
+
+let idCripto = encriptar(paramIndex)
+
+function encriptar(id){
+  var encriptarID1 = 
+  id.replace(/0/g,"lUy").replace(/1/g,"Bolp").replace(/2/g,"chArt").replace(/3/g,"mInt").replace(/4/g,"Ped").replace(/5/g,"lont").replace(/6/g,"minh").replace(/7/g,"lkj").replace(/8/g,"zdr").replace(/9/g,"paraM")
+  
+  var encriptarID2 =
+  encriptarID1.replace(/U/g,"JJkm1").replace(/a/g,"1Hf").replace(/o/g,"0Klm").replace(/e/g,"H4g").replace(/m/g,"0Kk")
+
+  return `${encriptarID2}`
+
+}
+function descript(cripto){
+
+  var encriptarID2 =
+  cripto.replace(/0Kk/g,"m").replace(/H4g/g,"e").replace(/0Klm/g,"o").replace(/1Hf/g,"a").replace(/JJkm1/g,"U");
+
+  var original = 
+  encriptarID2.replace(/paraM/g,"9").replace(/zdr/g,"8").replace(/lkj/g,"7").replace(/minh/g,"6").replace(/lont/g,"5").replace(/Ped/g,"4").replace(/mInt/g,"3").replace(/chArt/g,"2").replace(/Bolp/g,"1").replace(/lUy/g,"0")
+  
+  return `${original}`
+}
+
+
 
 fetch(`${baseUrl}${urlArtista}index.js`)
 .then((res)=>res.json())
@@ -49,7 +76,7 @@ function loadArtist(dataArt){
 
   const logo = document.querySelector("#logo")
   logo.addEventListener('click',()=>{
-    window.location.href = `./paginaInicial.html?index=${paramIndex}`
+    window.location.href = `./paginaInicial.html?index=${encriptar(paramIndex)}`
   })
 
   let i = 0
@@ -158,7 +185,7 @@ function puxarUser(index){
       user = `${usuario.id}`
     }
   })
-  return `${user}`
+  return `${encriptar(user)}`
 }
 function nomePagina(dataArt){
   const title = document.querySelector('#title-art')
