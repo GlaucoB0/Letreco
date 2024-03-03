@@ -337,7 +337,7 @@ header nav{
   margin: 0 3px;
 }
 header #nav div img{
-  display: none;
+  
 }
 .art .imagemArt img{
   width: 50px;
@@ -346,8 +346,13 @@ header #nav div img{
 
 }
 @media (max-width: 516px){
-  header #nav div img{
+  .user{
     display: none;
+  }
+  .pesquisar{
+    width: 50vw;
+    justify-content: space-between;
+    margin: 0;
   }
 }
 @media (max-width: 312px){
@@ -355,6 +360,11 @@ header #nav div img{
     height: 60px;
     width: 60px;
     border-radius: 10px;
+  }
+  .pesquisar{
+    width: 50vw;
+    justify-content: space-between;
+    margin: 0;
   }
 }
 /**********Footer***************/
