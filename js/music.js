@@ -60,6 +60,9 @@ function carregarPesquisa(data){
 
  
 }
+
+
+
 const logo = document.querySelector("#logo")
 logo.addEventListener('click',()=>{
   window.location.href = `./paginaInicial.html?index=${userId}`
@@ -96,29 +99,61 @@ async function loadArtista(music) {
   
   showMusic(data,music)
 }
-
 function showMusic(data,music){
   const letra = document.querySelector(".letra")
   const title = document.querySelector("#title-mus")
   title.innerHTML = `${music.mus[0].name} - Letreco`
   letra.innerHTML=
   `
-  <div class="infoMusica">
-    <img src="${baseUrl}${data.artist.pic_small}"></img>
-    <div class="nomeMusica">
-      <span class="nome">${music.mus[0].name}</span>
-      <a href="./artista.html?index=${puxarUser(userId)}&name=${data.artist.url}" class="nomeArtista">${music.art.name}</a>
-    </div>
-  </div>  
+  <div>
+    <div class="infoMusica">
+      <img src="${baseUrl}${data.artist.pic_small}"></img>
+      <div class="nomeMusica">
+        <span class="nome">${music.mus[0].name}</span>
+        <a href="./artista.html?index=${puxarUser(userId)}&name=${data.artist.url}" class="nomeArtista">${music.art.name}</a>
+        
+      </div>
+      <div class="tradutor"></div> 
+    </div> 
+    
+  </div>
+  
   <div class="letraMusica">
-    <p>${tratarLetra(music.mus[0].text)}</p>
+    <p id="letraMusica">${tratarLetra(music.mus[0].text)}</p>
     <a class="fonte" href="${music.mus[0].url}"><br>(letra retirada de: ${music.mus[0].url})</a>
   </div>
   `
+  traduzir(music.mus[0],music.mus[0].translate[0].text)
 }
 function tratarLetra(letra){
   return letra.replace(/\n/g,"<br>")
 }
+let t = 0
+function traduzir(letra,letraTraduzida){
+    if(letra.translate != undefined){
+      const tradutor = document.querySelector('.tradutor')
+      const letraMusica = document.querySelector('#letraMusica')
+      const traduzir = document.createElement('button')
+      traduzir.classList.add('traduzir')
+      traduzir.innerHTML = `Tradução`
+      tradutor.appendChild(traduzir)
+      
+        traduzir.addEventListener('click',()=>{
+          if(t == 0){
+          t++
+          letraMusica.innerHTML = `${tratarLetra(letraTraduzida)}`
+          traduzir.innerHTML = `Original`
+        }
+        else{
+          letraMusica.innerHTML = `${tratarLetra(letra.text)}`
+          t = 0
+          traduzir.innerHTML = `Tradução`
+      }
+    })
+      }
+      
+  }
+
 
 /**Rank */
 const tempo = new Date()
@@ -194,7 +229,6 @@ function showRankArt(art){
     artSec.classList.add("rankArt")
     const rankArtpai = document.querySelector(".rankArtistas")
     rankArtpai.appendChild(artSec)
-    console.log(artista)
     artSec.innerHTML =`
     <a href="./artista.html?index=${puxarUser(userId)}&name=${tratarART(artista.url)}" class="art" id="${artista.id}">
       <div class="imagemArt">

@@ -510,6 +510,16 @@ main .container{
   flex-direction: column;
   gap: 150px;
 }
+.traduzir{
+  cursor: pointer;
+  height: 50px;
+  width: 100px;
+  border-radius: 8px;
+  border: 1px solid var(--subletra);
+  background:none;
+  color: var(--subletra);
+  font-weight: bold;
+}
 
 /**********PAGINA DE ARTISTA************/
 main .imagem-Principal #hero{
@@ -594,6 +604,17 @@ div .a span:hover{
   .randomMusic{
     margin-top: 10px;
   }
+  .traduzir{
+    cursor: pointer;
+    height: 20px;
+    width: 60px;
+    border-radius: 8px;
+    border: 1px solid var(--subletra);
+    background:none;
+    color: var(--subletra);
+    font-weight: bold;
+    margin-right: 15px;
+  }
 }
 @media (max-width:625px){
   main .conter-pagina .conter{
@@ -610,6 +631,21 @@ div .a span:hover{
     flex-direction: column;
     gap: 10px;
   }
+}
+@media(max-width:330px){
+  .traduzir{
+    cursor: pointer;
+    height: 20px;
+    width: 60px;
+    border-radius: 8px;
+    border: 1px solid var(--subletra);
+    background:none;
+    color: var(--subletra);
+    font-weight: bold;
+  }
+}
+.tradutor{
+  margin-top: 10px;
 }
 .randomMusic{
   cursor: pointer;
