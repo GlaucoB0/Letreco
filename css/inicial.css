@@ -27,9 +27,16 @@ body{
 
 
 /*******************NavBar*****************/
-header{
+header {
   height: 9vh;
+  width: 100%;
   background-color: var(--preto-azuladinho);
+
+}
+.conter-nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 nav{
   display: flex;
@@ -44,6 +51,22 @@ nav{
   font-size: 2rem;
   color:var(--verde);
 }
+#pesquisar{
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+#menu{
+  position: relative;
+  z-index: 1;
+}
+.barra{
+  width: 31vw;
+  background-color: var(--pesquisar);
+  position: relative;
+  border-radius: 0 0 10px 10px ;
+  padding: 20px 0;
+}
 .pesquisar{
   background-color: var(--pesquisar);
   border-radius: 12px;
@@ -52,6 +75,12 @@ nav{
   border: none;
   padding-left: 10px;
   color: #B7B7B7;
+  box-sizing: border-box;
+  outline: none;
+}
+.pesquisar[type=text]:focus{
+  border:1px solid var(--verde);
+
 }
 nav div img{
   margin-left: -30px;
@@ -71,7 +100,7 @@ main{
 }
 .container{
   width: 80%;
-  margin-top: 105px;
+  margin-top: 9vw;
 }
 .title{
   font-size: 1.8rem;
@@ -254,6 +283,10 @@ main .musica-Container{
   }
   .music .numRank{
     font-size: 2rem;
+  }
+  main .conter section .musArt{
+    margin: 0 10;
+    height: 280px;
   }
   main .container section .musArt{
     margin: 0 10;
@@ -465,9 +498,10 @@ main .imagem-Principal{
 main .conter-pagina .conter{
   display: flex;
   flex-direction: column;
-  gap: 150px;
+  gap: 6vw;
   margin: 0 10%;
 }
+
 main .imagem-Principal .nomeRank{
   display: flex;
   align-items: baseline;
@@ -492,11 +526,11 @@ main .imagem-Principal .infos-artista{
   margin-bottom: 38px;
 }
 main .mais-tocadas .top-musicas .Musics{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display:flex;
+  flex-direction: column;
 }
 main .mais-tocadas .top-musicas .Musics .musica{
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 .fonte{
   color: var(--verde);
@@ -529,6 +563,27 @@ div .a:hover{
 div .a span:hover{
   color: var(--preto-azulado);
 }
+@media(max-width:685px) {
+  .randomMusic{
+    margin-top: 10px;
+  }
+}
+@media (max-width:625px){
+  main .conter-pagina .conter{
+    gap: 20vw;
+  }
+}
+@media(max-width:420px){
+  main .mais-tocadas .top-musicas .Musics{
+    display: flex;
+    flex-direction: column;
+  } 
+  main .conter-pagina .conter .conter-musicas .allMusics{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 .randomMusic{
   cursor: pointer;
   height: 50px;
@@ -542,4 +597,18 @@ div .a span:hover{
 .randomMusic:hover{
   color: var(--verde);
   border-color: var(--verde);
+}
+.banda{
+  color: var(--verde);
+  font-weight: bold;
+}
+#menu .barra{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 40vw;
+}
+#menu .barra div a:hover{
+  background-color: var(--subletra);
+  border-radius: 8px;
 }

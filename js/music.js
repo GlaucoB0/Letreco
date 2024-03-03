@@ -12,7 +12,45 @@ acharUser(userId)//colocar o nome do usuario na navbar
 // https://api.vagalume.com.br/search.php?apikey=${key}&musid=${id}
 // https://www.vagalume.com.br/${nomeArtista}/index.js
 
+const btnpesquisa = document.querySelector("#pesquisar")
+btnpesquisa.addEventListener('click',()=>{
+  let valorPesquisa = document.querySelector(".pesquisar").value
+  valorPesquisa = valorPesquisa.replace(/ /g, "%20")
+  console.log(valorPesquisa)
+  fetch(`https://api.vagalume.com.br/search.artmus?apikey=${key}&q=${valorPesquisa}&limit=5`)
+  .then((res)=>res.json())
+  .then((data)=>{
+    carregarPesquisa(data)
+    console.log(data)
+  })
+})
 
+function carregarPesquisa(data){
+  const menu = document.createElement("div")
+  menu.classList.add("barra")
+  data.response.docs.map((results)=>{
+
+  const barra = document.querySelector("#menu")
+    barra.appendChild(menu)
+    const nome = document.createElement("div")
+    menu.appendChild(nome)
+    if(results.title == undefined){
+    nome.innerHTML=
+      `
+      <a href="./artista.html?index=${puxarUser(userId)}&name=${tratarART(results.url)}" class="banda">${results.band}</a>
+      `
+    }
+    else{
+      nome.innerHTML=
+      `
+      <a href="./music.html?index=${puxarUser(userId)}&id=${results.id}"> ${results.title} - <span class="banda">${results.band}</span></a>
+      `
+    }
+
+    })
+
+ 
+}
 
 //funções
 function acharUser(index){
