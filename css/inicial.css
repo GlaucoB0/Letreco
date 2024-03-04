@@ -647,6 +647,10 @@ div .a span:hover{
 .tradutor{
   margin-top: 10px;
 }
+.traduzir:hover{
+  color: var(--verde);
+  border-color: var(--verde);
+}
 .randomMusic{
   cursor: pointer;
   height: 50px;
