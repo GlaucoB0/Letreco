@@ -577,15 +577,10 @@ main .imagem-Principal .nomeRank h1{
 .head-mus{
   display: flex;
   justify-content:space-between;
-  border: 1px solid wheat;
   width: 100%;
   align-items: baseline;
   gap: 6vw;
   margin-right: 10%;
-}
-main .container .music-container{
-
-  border: 1px solid wheat;
 }
 main .imagem-Principal span{
   font-weight: bold;
