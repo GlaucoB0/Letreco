@@ -141,6 +141,7 @@ function showMusic(data, music) {
   const letra = document.querySelector(".letra")
   const title = document.querySelector("#title-mus")
   title.innerHTML = `${music.mus[0].name} - Letreco`
+  console.log(music)
   letra.innerHTML =
     `
   <div>
@@ -153,7 +154,7 @@ function showMusic(data, music) {
       </div>
       <div class="tradutor"></div> 
     </div> 
-    
+  
   </div>
   
   <div class="letraMusica">
@@ -167,6 +168,10 @@ function showMusic(data, music) {
 function tratarLetra(letra) {
   return letra.replace(/\n/g, "<br>")
 }
+
+
+
+
 
 //Traduzir a letra
 let t = 0

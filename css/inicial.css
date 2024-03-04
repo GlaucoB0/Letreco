@@ -251,6 +251,7 @@ main .musica-Container{
   color: var(--subletra);
   font-weight: 500;
 }
+
 @media(max-width: 1100px){
   .imgArt{
     height: 258,21px;
@@ -368,9 +369,6 @@ main .musica-Container{
 }
 header nav{
   margin: 0 3px;
-}
-header #nav div img{
-  
 }
 .art .imagemArt img{
   width: 50px;
