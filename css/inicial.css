@@ -9,6 +9,10 @@
   background-color: var(--verde);
   color: var(--preto-azulado);
 }
+.frameYT{
+  height: 270px;
+  width: 300px;
+}
 a{
   text-decoration: none;
 }
@@ -557,7 +561,10 @@ main .conter-pagina .conter{
   gap: 6vw;
   margin: 0 10%;
 }
-
+.head-mus{
+  display: flex;
+  justify-content: space-between;
+}
 main .imagem-Principal .nomeRank{
   display: flex;
   align-items: baseline;
@@ -623,6 +630,10 @@ div .a span:hover{
   .randomMusic{
     margin-top: 10px;
   }
+  iframe{
+    height: 100px;
+    width: 150px;
+  }
   .traduzir{
     cursor: pointer;
     height: 20px;
@@ -638,6 +649,12 @@ div .a span:hover{
 @media (max-width:625px){
   main .conter-pagina .conter{
     gap: 20vw;
+  }
+}
+@media (max-width:513px){
+  .head-mus{
+    flex-direction: column;
+    gap: 20px;
   }
 }
 @media(max-width:420px){
