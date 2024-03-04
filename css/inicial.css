@@ -574,6 +574,19 @@ main .imagem-Principal .nomeRank h1{
   font-size: 3rem;
   color: var(--verde);
 }
+.head-mus{
+  display: flex;
+  justify-content:space-between;
+  border: 1px solid wheat;
+  width: 100%;
+  align-items: baseline;
+  gap: 6vw;
+  margin-right: 10%;
+}
+main .container .music-container{
+
+  border: 1px solid wheat;
+}
 main .imagem-Principal span{
   font-weight: bold;
 }
@@ -629,6 +642,10 @@ div .a span:hover{
 iframe{
   height: 230px;
   width: 330px;
+}
+.nomeTrad{
+  display: flex;
+  flex-direction: column;
 }
 @media(max-width:685px) {
   .randomMusic{

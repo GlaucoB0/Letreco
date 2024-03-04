@@ -145,15 +145,17 @@ function showMusic(data, music) {
   letra.innerHTML =
     `
   <div class="head-mus">
+  <div class="nomeTrad">
     <div class="infoMusica">
+    
       <img src="${baseUrl}${data.artist.pic_small}"></img>
       <div class="nomeMusica">
         <span class="nome">${music.mus[0].name}</span>
         <a href="./artista.html?index=${puxarUser(userId)}&name=${data.artist.url}" class="nomeArtista">${music.art.name}</a>
         
       </div>
-      <div class="tradutor"></div> 
-      
+       </div>
+       <div class="tradutor"></div>
     </div> 
     <div id="player"></div>
   </div>
