@@ -1,6 +1,7 @@
 import data from '../login.json' assert { "type": "json" };
 const btn = document.querySelector('.btn')
 
+  /*----------------------------------------Receber os dados----------------------------------------- */
 const senha = document.querySelector('#senha')
 senha.addEventListener('keypress', function (event) {
   if (event.key === 'Enter') {
@@ -13,24 +14,25 @@ user.addEventListener('keypress', function (event) {
     enter()
   }
 })
-
-function enter() {
-  const user = document.querySelector('#user').value
-  const senha = document.querySelector('#senha').value
-
-  login(user,senha)
-}
-
 btn.addEventListener('click', ()=>{
   const user = document.querySelector('#user').value
   const senha = document.querySelector('#senha').value
 
-  login(user,senha)
+  login(user.trim(),senha.trim())
 })
+function enter() {
+  const user = document.querySelector('#user').value
+  const senha = document.querySelector('#senha').value
 
+  login(user.trim(),senha.trim())
+}
+
+//Verifica se os dados existem no json
 function login(user,senha){
+  let i = 0
   data.forEach((info)=>{
     if(user == info.usuario){
+      i++
       if(senha == info.senha){
         window.location.href = `./pages/paginaInicial.html?index=${encriptar(info.id)}`
       }
@@ -39,9 +41,12 @@ function login(user,senha){
       }
     }
   })
+  if(i==0){
+    alert("usuario não encontrado")
+  }
 }
 
-//let idCripto = encriptar(paramIndex)
+  /*----------------------------------------Encriptação dos dados----------------------------------------- */
 
 function encriptar(id){
   var encriptarID1 = 
