@@ -65,8 +65,6 @@ function pesquisar() {
       console.log(data)
     })
 }
-
-
 /**eliminar o conteudo antigo da pesquisa */
 const barra = document.querySelector("#menu")
 function carregarPesquisa(data) {
@@ -77,8 +75,6 @@ function carregarPesquisa(data) {
   const menu = document.createElement("div")
   menu.classList.add("barra")
   data.response.docs.map((results) => {
-
-
     barra.appendChild(menu)
     const nome = document.createElement("div")
     menu.appendChild(nome)

@@ -178,34 +178,27 @@ function tratarLetra(letra) {
   return letra.replace(/\n/g, "<br>")
 }
 
-//------------------------------------------------------------------------------------------
+//---------------------------------------PLAYER---------------------------------------------------
 // Função para pesquisar no YouTube
 function searchYouTube(songName, artistName, callback) {
-  // Utilize a API do YouTube para fazer a pesquisa
-  // Substitua 'SUA_CHAVE_DE_API' pela sua chave de API do YouTube
   var apiKey = 'AIzaSyB_zZcB92jY0rIOjIATA4rVN6zZW0VzLK0';
   var url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=' + encodeURIComponent(songName + ' ' + artistName) + '&key=' + apiKey;
-
-  // Requisição fetch para a API do YouTube
   fetch(url)
   .then((res)=>{
-    return res.json()
-    
+    return res.json() 
   })
   .then((response)=>{
     console.log(response)
     if (response.items.length > 0) {
-      // Retorna o ID do vídeo encontrado
       var videoId = response.items[0].id.videoId;
       callback(videoId);
   } else {
-      // Se nenhum vídeo for encontrado, retorne null
       callback(null);
   }
   })
 }
 
-// Função para incorporar o player do YouTube
+// Função para o player do YouTube
 function embedYouTubePlayer(videoId) {
   if (videoId) {
       // Se um vídeo for encontrado, crie o iframe do player do YouTube
@@ -214,8 +207,6 @@ function embedYouTubePlayer(videoId) {
       iframe.src = 'https://www.youtube.com/embed/' + videoId;
       iframe.frameborder = '0';
       iframe.allowfullscreen = true;
-
-      // Adicione o iframe ao elemento com ID 'player'
       document.getElementById('player').appendChild(iframe);
   } else {
       // Se nenhum vídeo for encontrado, exiba uma mensagem de erro
