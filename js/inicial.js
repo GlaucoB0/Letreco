@@ -96,6 +96,7 @@ const loadNovidades = async () => {
   const res = await fetch(`${baseUrl}/hotspots.php?apikey=${key}`);
   const data = await res.json()
   const limitdata = data.hotspots.slice(0, 3)
+  console.log(limitdata)
   return limitdata
 }
 //https://api.vagalume.com.br/rank.php?apikey=${}&type=mus&period=day&periodVal=${data}&scope=all&limit=6
@@ -177,11 +178,11 @@ function showHotSpots(spots){
     novidades.appendChild(spotsSecc)
     spotsSecc.innerHTML = 
   `
-  <a href="./music.html?index=${puxarUser(paramIndex)}&id=${spot.id}" class="hotMusic" id=${spot.id}>
+  <a href="https://vagalume.com.br${spot.link}" class="hotMusic" id=${spot.id}>
     <div class="imagem">
       <img src="${spot.art_pic_src}" alt="foto do artista" class="imgArt">
-      <span class="nomeArt">${(spot.title).toUpperCase()}</span>
-      <span class="Desc-mus">${spot.descr}</span>
+      <a href="./artista.html?index=${puxarUser(paramIndex)}&name=/${spot.artUrl}/" id="nomeArtista" class="nomeArt">${(spot.title).toUpperCase()}</a>
+      <a href="https://vagalume.com.br${spot.link}" class="desc-mus">${spot.descr}</a>
     </div> 
   </a>
   `

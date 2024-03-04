@@ -44,6 +44,7 @@ nav{
   align-items: center;
   height: 100%;
   margin: 0 10%;
+  gap: 55px;
 }
 .logo{
   font-family: 'Inika';
@@ -58,6 +59,8 @@ nav{
   cursor: pointer;
   background: none;
   border: none;
+  position:absolute;
+  margin-top: 5px;
 }
 #menu{
   position: relative;
@@ -77,6 +80,7 @@ nav{
   width: 31vw;
   border: none;
   padding-left: 10px;
+  padding-right: 35px;
   color: #B7B7B7;
   box-sizing: border-box;
   outline: none;
@@ -132,14 +136,19 @@ main .container .ranksecc{
   align-items: center;
   cursor: pointer;
 }
-.novidades .hotSpots .hotMusic .imagem .Desc-mus:hover{
+
+.desc-mus:hover{
   color: var(--verde);
 }
 .imgArt{
-  height: 30vh;
-  width: 20vw;
+  height: 315px;
+  width: 300px;
   border-radius: 10px;
 }
+.hotMusic .imagem #nomeArtista:hover{
+  color: var(--verde);
+  background-color: var(--preto-azulado);
+} 
 .nomeArt{
   background-color: var(--verde);
   color: var(--preto-azulado);
@@ -241,6 +250,13 @@ main .musica-Container{
 .art .info-artista .views{
   color: var(--subletra);
   font-weight: 500;
+}
+@media(max-width: 1100px){
+  .imgArt{
+    height: 230px;
+    width: 220px;
+    border-radius: 10px;
+  }
 }
 @media (max-width: 860px) {
   *{
@@ -492,9 +508,14 @@ main .music-container .infoMusica .nome{
   font-weight: bold;
   font-size: 1.1rem;
 }
-main .music-container .infoMusica .nomeArtista{
+main .music-container .infoMusica .nomeArt{
   color: var(--subletra);
   font-weight: bold;
+}
+
+.nomeArt:hover{
+  background-color: var(--preto-azulado);
+  color: var(--verde);
 }
 main .music-container .letraMusica{
   margin-left: 60px;
